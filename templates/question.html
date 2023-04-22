@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions</title>
+</head>
+<body>
+    <form action="score" method="POST">
+      {% csrf_token %}
+    {% for i in question %}
+        {% if i.quiz_id == quiz_id %}
+       <p>{{i.question_num}}.{{i.questin_text}}</p>
+       <ul>
+        {% for j in choices %}
+        {% if j.question_id == i.id %}
+          <li>
+            <label>
+              <input type="radio" name="question{{ i.id }}" id="choice{{ j.id }}" value="{{ j.id }}">
+              {{ j.choice_text }}
+            </label>
+          </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+      {% endif %}
+    {% endfor %}
+    <input type="submit" value="submit">
+</form>
+</body>
+</html>
