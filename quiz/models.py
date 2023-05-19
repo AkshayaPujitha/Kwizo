@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 class Quiz(models.Model):
     quiz_title=models.CharField(max_length=300)
     num_questions=models.IntegerField(default=0)
+    quiz_id=models.CharField(max_length=100,null=True)
 
     def __str__(self):
         return self.quiz_title

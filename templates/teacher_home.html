@@ -38,27 +38,16 @@
 </style>
 <body>
     
-    {% if user.is_authenticated %}
-
-    <div class="container">
-        <h1>Hey, {{ user.username }}</h1>
-    
-        <div class="login-register">
-          <a href="logout">Logout</a>
-          <a href="quiz.html">Lets Start</a>
-        </div>
-        </div>
-    
-{% else %}
+   
     <div class="container">
     <h1> Welcome To Kwizzo</h1>
     <div class="login-register">
-      <a href="login.html">Login</a>
-      <a href="register.html">Register</a>
-      <a href="teacher_home.html">Teacher Login</a>
+      <a href="delete.html">Delete Question</a>
+      
+      <a href="createquiz">Create Quiz</a>
     </div>
     </div>
-{% endif %}
+
     
 </body>
 </html>
